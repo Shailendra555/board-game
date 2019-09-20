@@ -1,0 +1,32 @@
+
+
+:host ::ng-deep .cell{
+    min-width: 40px !important;
+    height: 40px !important;
+    display: inline-block !important;
+    border: 1px solid gray !important;
+    margin-left: 4px !important;
+}
+
+:host ::ng-deep .user-block{
+    width: 20px !important;
+    height: 20px !important;
+    display: block;
+    border: 1px solid gray !important;
+    border-radius: 50%;
+    background: green;
+    position: relative;
+    top: 20%;
+    left: 20%;
+}
+:host ::ng-deep .queen-block{
+    width: 20px !important;
+    height: 20px !important;
+    display: block;
+    border: 1px solid gray !important;
+    border-radius: 50%;
+    background: red;
+    position: relative;
+    top: 20%;
+    left: 20%; 
+}
