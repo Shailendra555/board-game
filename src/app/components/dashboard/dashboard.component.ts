@@ -50,6 +50,7 @@ export class DashboardComponent implements OnInit {
       let column = Math.floor(columns/2);
       this.selectedCell = 'cell-'+row+'-'+column;
       let cell = document.getElementById(this.selectedCell);
+      cell.classList.add('selected-cell');
       this.userDiv = document.createElement('span');
       this.userDiv.setAttribute('id', 'user');
       this.userDiv.setAttribute('class', 'user-block');
@@ -155,10 +156,18 @@ export class DashboardComponent implements OnInit {
 
   changePositionOfUser(newPosition){
     this.totalMoves += 1; 
+    var childDivs = this.container.nativeElement.getElementsByTagName('span');
+
+for( let i=0; i< childDivs.length; i++ )
+{
+ var childDiv = childDivs[i];
+childDiv.classList.remove("selected-cell");
+}
       var removeUser = document.getElementById('user');
       removeUser.parentNode.removeChild(removeUser);
       this.selectedCell = newPosition;
       let cell = document.getElementById(this.selectedCell);
+      cell.classList.add('selected-cell');
       if(cell && cell.childElementCount > 0){
         var removeQueen = cell.firstChild;
         removeQueen.parentNode.removeChild(removeQueen);
